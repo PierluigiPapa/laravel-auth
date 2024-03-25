@@ -30,7 +30,15 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        $val_data = $request->validated();
+
+        $slug = Project::generateSlug($request->title);
+
+        $val_data['slug'] = $slug;
+
+        $new_project = Project::create($val_data);
+
+        return redirect()->route('dashboard.projects.index');
     }
 
     /**
@@ -38,7 +46,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return redirect()->route('pages.projects.show', compact('project'));
     }
 
     /**

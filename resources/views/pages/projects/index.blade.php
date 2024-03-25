@@ -6,7 +6,7 @@
     <h1 class="text-center py-3">PierFolio</h1>
 
     <div class="text-center">
-        <a class="btn btn-primary mb-3 " href="{{ route('dashboard.projects.create') }}">Crea</a>
+        <a class="btn btn-primary mb-3" href="{{ route('dashboard.projects.create') }}">CREA</a>
     </div>
 
     <table class="table">
@@ -28,11 +28,11 @@
                 <td>{{ $item->cover }}</td>
                 <td>{{ $item->slug }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ route('dashboard.projects.edit', $item->id) }}">Modifica</a>
+                    <a class="btn btn-primary" href="{{ route('dashboard.projects.edit', $item->id) }}">MODIFICA</a>
                     <form method="POST" action="{{ route('dashboard.projects.destroy', $item->id) }}" style="display: inline-block;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">CANCELLA</button>
                     </form>
                 </td>
             </tr>
