@@ -5,7 +5,9 @@
 <main class="container">
     <h1 class="text-center py-3">PierFolio</h1>
 
-    <a class="btn btn-primary mb-3" href="{{ route('dashboard.projects.create') }}">Crea</a>
+    <div class="text-center">
+        <a class="btn btn-primary mb-3 " href="{{ route('dashboard.projects.create') }}">Crea</a>
+    </div>
 
     <table class="table">
         <thead>
