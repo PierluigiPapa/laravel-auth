@@ -54,8 +54,15 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+
+        return view('pages.projects.edit', compact('project'));
     }
+
+    // public function edit(string $id)
+    // {
+    //     $comic = Comic::find($id);
+    //     return view('comics.edit', compact('comic'));
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -70,6 +77,8 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('dashboard.projects.index');
     }
 }
