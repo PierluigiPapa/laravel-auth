@@ -28,7 +28,7 @@
                 <td>{{ $item->cover }}</td>
                 <td>{{ $item->slug }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ route('dashboard.projects.edit', $item->id) }}">MODIFICA</a>
+                    <a class="btn btn-primary my-3" href="{{ route('dashboard.projects.edit', $item->id) }}">MODIFICA</a>
                     <form method="POST" action="{{ route('dashboard.projects.destroy', $item->id) }}" style="display: inline-block;">
                         @csrf
                         @method('DELETE')

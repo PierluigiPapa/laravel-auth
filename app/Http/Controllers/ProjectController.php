@@ -38,7 +38,7 @@ class ProjectController extends Controller
 
         $new_project = Project::create($val_data);
 
-        return redirect()->route('dashboard.projects.index');
+        return redirect()->route('dashboard.projects.show', ['project' =>$new_project->id]);
     }
 
     /**
@@ -46,7 +46,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return redirect()->route('pages.projects.show', compact('project'));
+        return redirect()->route('dashboard.projects.index', compact('project'));
     }
 
     /**
@@ -58,18 +58,20 @@ class ProjectController extends Controller
         return view('pages.projects.edit', compact('project'));
     }
 
-    // public function edit(string $id)
-    // {
-    //     $comic = Comic::find($id);
-    //     return view('comics.edit', compact('comic'));
-    // }
-
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $val_data = $request->validated();
+
+        $slug = Project::generateSlug($request->title);
+
+        $val_data['slug'] = $slug;
+
+        $project->update($val_data);
+
+        return redirect()->route('dashboard.projects.index');
     }
 
     /**
