@@ -46,7 +46,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return redirect()->route('dashboard.projects.index', compact('project'));
+        return view ('pages.projects.show', compact('project'));
     }
 
     /**

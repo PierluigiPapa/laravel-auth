@@ -3,6 +3,6 @@
 @section('content')
 <div class="container">
     <h1 class="mt-2 fw-bold">{{$project->title}}</h1>
-    <span>{{$project->description}}</span>
+    <span>{{$project->content}}</span>
 </div>
 @endsection
