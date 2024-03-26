@@ -11,25 +11,25 @@
 
         <div class="mb-3">
             <label for="title" class="form-label fw-bold">Titolo</label>
-            <input type="text" class="form-control" name="title" id="title" value="{{ old('title') ?? $project->title }}">
+            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" value="{{ old('title') ?? $project->title }}">
             @error('title')
-            <div class="bg-danger text-white text-center">{{ $message }}</div>
+            <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>
 
         <div class="mb-3">
             <label for="content" class="form-label fw-bold">Descrizione</label>
-            <textarea class="form-control" name="content" id="content" rows="3" value="{{ old('title') ?? $project->content }}"></textarea>
+            <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" rows="3">{{ old('content') ?? $project->content }}</textarea>
             @error('content')
-            <div class="bg-danger text-white text-center">{{ $message }}</div>
+            <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>
 
         <div class="mb-3">
             <label for="cover" class="form-label fw-bold">Immagine</label>
-            <input type="text" class="form-control" name="cover" id="cover" value="{{ old('cover') ?? $project->cover }}">
+            <input type="text" class="form-control @error('cover') is-invalid @enderror" name="cover" id="cover" value="{{ old('cover') ?? $project->cover }}">
             @error('cover')
-            <div class="bg-danger text-white text-center">{{ $message }}</div>
+            <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>
 

@@ -10,17 +10,17 @@
 
         <div class="mb-3">
             <label for="title" class="form-label fw-bold">Titolo</label>
-            <input type="text" class="form-control" name="title" id="title">
+            <input type="text" class="form-control  @error('title') is-invalid @enderror" name="title" id="title">
             @error('title')
-            <div class="bg-danger text-white text-center">{{ $message }}</div>
+            <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>
 
         <div class="mb-3">
             <label for="content" class="form-label fw-bold">Descrizione</label>
             <textarea class="form-control" name="content" id="content" rows="3"></textarea>
-            @error('description')
-            <div class="bg-danger text-white text-center">{{ $message }}</div>
+            @error('content')
+            <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>
 
@@ -28,7 +28,7 @@
             <label for="cover" class="form-label fw-bold">Immagine</label>
             <input type="text" class="form-control" name="cover" id="cover">
             @error('cover')
-            <div class="bg-danger text-white text-center">{{ $message }}</div>
+            <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>
 

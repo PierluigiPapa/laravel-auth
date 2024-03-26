@@ -12,11 +12,12 @@
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Titolo</th>
-            <th scope="col">Descrizione</th>
-            <th scope="col">Cover</th>
-            <th scope="col">Slug</th>
+            <th scope="col" class="text-center">Id</th>
+            <th scope="col" class="text-center">Titolo</th>
+            <th scope="col" class="text-center">Descrizione</th>
+            <th scope="col" class="text-center">Cover</th>
+            <th scope="col" class="text-center">Slug</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
