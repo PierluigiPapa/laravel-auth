@@ -95,7 +95,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        if ($post->cover) {
+        if ($project->cover) {
             Storage::delete($project->cover);
         }
 

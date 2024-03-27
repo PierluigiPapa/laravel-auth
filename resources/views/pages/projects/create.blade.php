@@ -19,7 +19,7 @@
         <div class="mb-3">
             <label for="cover" class="form-label fw-bold">Carica una nuova immagine</label>
             <input class="form-control @error('cover') is-invalid @enderror" type="file" id="cover" name="cover">
-            @error('content')
+            @error('cover')
             <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>

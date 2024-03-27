@@ -26,7 +26,7 @@
         <div class="mb-3">
             <label for="cover" class="form-label fw-bold">Carica una nuova immagine</label>
             <input class="form-control @error('cover') is-invalid @enderror" type="file" id="cover" name="cover">
-            @error('content')
+            @error('cover')
             <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>
@@ -38,14 +38,6 @@
             <div class="text-danger text-center">{{ $message }}</div>
             @enderror
         </div>
-
-        {{-- <div class="mb-3">
-            <label for="cover" class="form-label fw-bold">Immagine</label>
-            <input type="text" class="form-control @error('cover') is-invalid @enderror" name="cover" id="cover" value="{{ old('cover') ?? $project->cover }}">
-            @error('cover')
-            <div class="text-danger text-center">{{ $message }}</div>
-            @enderror
-        </div> --}}
 
         <div class="text-center">
             <button type="submit" class="btn btn-primary">AGGIORNA</button>

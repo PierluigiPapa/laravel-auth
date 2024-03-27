@@ -1,16 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+<h1 class="mt-2 my-3 fw-bold text-center">{{$project->title}}</h1>
+
 <div class="container">
-    <h1 class="mt-2 fw-bold">{{$project->title}}</h1>
-    <span class="mt-2">{{$project->slug}}</span> <br>
-
-    @if ($project->cover)
-    <img src="{{ asset( '/storage/' . $project->cover) }}" alt="">
-    @endif
-
-    <br>
-
-    <span class="mt-2">{{$project->content}}</span>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card" style="width: 40rem;">
+            @if ($project->cover)
+            <img src="{{ asset( '/storage/' . $project->cover) }}" alt="">
+            @endif
+            <div class="card-body">
+              <p class="card-text text-center fw-bold fs-3">{{$project->slug}}</p>
+              <p class="card-text text-center">{{$project->content}}</p>
+            </div>
+          </div>
+    </div>
 </div>
 @endsection
