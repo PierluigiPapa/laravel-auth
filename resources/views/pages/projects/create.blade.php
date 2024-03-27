@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="text-center py-3">CREA UN NUOVO PROGETTO</h1>
+<h1 class="text-center py-3">Crea un nuovo progetto</h1>
 
 <main class="container py-3">
     <form action="{{route('dashboard.projects.store')}}" method="POST">
@@ -32,7 +32,9 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Crea</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">CREA NUOVO PROGETTO</button>
+        </div>
     </form>
 
 </main>

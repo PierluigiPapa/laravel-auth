@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="text-center py-3">MODIFICA IL PROGETTO</h1>
+<h1 class="text-center py-3">Modifica il progetto</h1>
 
 <main class="container py-3">
     <form action="{{ route('dashboard.projects.update', $project->id) }}" method="POST">
@@ -25,6 +25,8 @@
             @enderror
         </div>
 
+        
+
         <div class="mb-3">
             <label for="cover" class="form-label fw-bold">Immagine</label>
             <input type="text" class="form-control @error('cover') is-invalid @enderror" name="cover" id="cover" value="{{ old('cover') ?? $project->cover }}">
@@ -33,7 +35,10 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Aggiorna</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">AGGIORNA</button>
+        </div>
+
     </form>
 </main>
 @endsection
