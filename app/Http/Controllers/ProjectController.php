@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProjectController extends Controller
 {
@@ -33,8 +35,13 @@ class ProjectController extends Controller
         $val_data = $request->validated();
 
         $slug = Project::generateSlug($request->title);
-
         $val_data['slug'] = $slug;
+
+        if($request->hasFile('cover')) {
+            $path = Storage::disk('public')->put('project_images', $request->cover);
+
+            $val_data['cover'] = $path;
+        }
 
         $new_project = Project::create($val_data);
 
@@ -66,8 +73,17 @@ class ProjectController extends Controller
         $val_data = $request->validated();
 
         $slug = Project::generateSlug($request->title);
-
         $val_data['slug'] = $slug;
+
+        if($request->hasFile('cover')) {
+            if ($project->cover) {
+                Storage::delete($project->cover);
+            }
+
+            $path= Storage::disk('public')->put('project_images', $request->cover);
+
+            $val_data['cover'] = $path;
+        }
 
         $project->update($val_data);
 
@@ -79,6 +95,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if ($post->cover) {
+            Storage::delete($project->cover);
+        }
+
         $project->delete();
 
         return redirect()->route('dashboard.projects.index');

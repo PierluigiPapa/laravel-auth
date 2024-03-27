@@ -17,7 +17,7 @@
             <th scope="col" class="text-center">Descrizione</th>
             <th scope="col" class="text-center">Cover</th>
             <th scope="col" class="text-center">Slug</th>
-            <th scope="col"></th>
+            <th scope="col" class="text-center">Azioni</th>
           </tr>
         </thead>
         <tbody>
