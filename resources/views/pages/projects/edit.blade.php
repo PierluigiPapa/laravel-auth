@@ -25,8 +25,6 @@
             @enderror
         </div>
 
-        
-
         <div class="mb-3">
             <label for="cover" class="form-label fw-bold">Immagine</label>
             <input type="text" class="form-control @error('cover') is-invalid @enderror" name="cover" id="cover" value="{{ old('cover') ?? $project->cover }}">
